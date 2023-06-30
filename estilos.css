@@ -1,10 +1,11 @@
 *{
     box-sizing: border-box; 
     /* font-size: 65.2%;     */
-}
-body{
     margin: 0;
     padding: 0;
+}
+body{
+    
     font-family: sans-serif;
     /* font-size: 16px; */
     background-color: #efe8e8e0;
@@ -101,4 +102,16 @@ footer{
         width: 100%;
         text-align: center;
     }
+}
+
+@media (max-width:810px){
+    .row{
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    footer{
+        padding: 20px;
+    }
+
 }
