@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;    
+}
+
+@mixin tamanio480{
+    @media (max-width:480px){
+        @content;
+    }
+}
+
+@mixin tamanio810px(){
+    @media (max-width:810px){
+        @content;
+    }
+}
+
+html{
+    font-size: 62.5%;//10px 
+
+    body{
+        font-family: sans-serif;
+        background-color: #efe8e8e0;
+
+        .contenedor{
+            width: 90%;
+            max-width: 100rem;
+            min-width: 36rem;
+            margin: 0 auto;
+
+            header{
+                padding: 5rem;
+                background-color: aqua;
+                text-align: center;
+            }
+
+            nav{
+                display: flex;
+                background-color: #444;
+                justify-content: center;
+
+                @include tamanio480(){
+                    flex-direction: column;
+                }
+
+                a{
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 1.4rem 2rem;                    
+
+                    @include tamanio480(){
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    &:hover{
+                        background-color: #e8e8e8b5;
+                        color: #444;
+                    }
+                }                
+            }
+
+            .row{
+                display: flex;
+                
+                @include tamanio810px(){
+                    flex-direction: column;
+                    text-align: center;
+                }
+
+                section{
+                    background-color: bisque;
+                    padding: 2rem;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    &>h2{
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    article{
+                        background-color: aquamarine;
+                        border: 2px dashed cornflowerblue;
+                        padding: 1rem;
+                    }
+
+                    .contenedorSections{
+                        display: flex;
+                        gap: 5px;
+                        
+                        @include tamanio480(){
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+
+            aside{
+                background-color: chocolate;
+                padding: 1.5rem;
+                @include tamanio480(){
+                    display: none;
+                }
+            }
+
+            footer{
+                background-color: #444;
+                padding: 0.5rem;
+                text-align: center;
+                color: #fff;
+                margin: 0 auto;
+                font-size: 1.5rem;
+
+                @include tamanio810px(){
+                    padding: 2rem;
+                }
+            }
+
+
+        }
+    }
+}
+
